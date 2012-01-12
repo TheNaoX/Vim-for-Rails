@@ -12,13 +12,14 @@ set lines=50
 if has("gui_macvim")
 
   set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
-  set guifont=Monaco:h13 
+  set guifont=Monospace:h11 
   set guioptions-=T  " remove toolbar
   set stal=2 " turn on tabs by default
   set guioptions+=c " remove mac dialogs or Ctrl+F7 toggles keyboard dialog navigation
 elseif has("gui_gtk2")
-  set guifont=Monaco
+  set guifont=Monospace\ 10
   set guioptions-=T  " remove toolbar
+  set vb t_vb=
 elseif has("x11")
 elseif has("gui_win32")
 end
