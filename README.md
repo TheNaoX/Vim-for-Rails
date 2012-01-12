@@ -17,7 +17,9 @@ then add the config files:
 
  `git clone git://github.com/TheNaoX/Vim-for-Rails.git ~/.vim`
 
-    cd ~/.vim
+  `cd ~/.vim`
+
+  `./install.sh`
 
 # USAGE
      -----------------------------------------------------------------------------  
