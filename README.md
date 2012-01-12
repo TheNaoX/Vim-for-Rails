@@ -72,6 +72,6 @@ Things i want to include, build, improve, etc
 
 ![Vim for Rails in acction](http://dl.dropbox.com/u/56777664/Pantallazo%20del%202012-01-11%2022%3A42%3A27.png)
 
-## And not forgive this!!
+## And don't forget this!!
 
 This Vim for Rails config files, are forked from [Federico Ramallo's](https://github.com/framallo) github account, so you can follow him, and get some awsome and usefull stuff... :)
