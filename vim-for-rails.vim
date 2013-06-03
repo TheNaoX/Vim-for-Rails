@@ -75,18 +75,16 @@ set numberwidth=4
 
 
 " Windows *********************************************************************
-set equalalways " Multiple windows, when created, are equal in size
+set equalalways
 set splitbelow splitright
 
 " Vertical and horizontal split then hop to a new buffer
 :noremap <Leader>v :vsp^M^W^W<cr>
 :noremap <Leader>h :split^M^W^W<cr>
 
-
 " Cursor highlights ***********************************************************
 set cursorline
-"set cursorcolumn
-
+set cursorcolumn
 
 " Searching *******************************************************************
 set hlsearch  " highlight search
@@ -94,66 +92,41 @@ set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching 
 set smartcase " Ignore case when searching lowercase
 
-
 " Colors **********************************************************************
 syntax on " syntax highlighting
 
 
 " Status Line *****************************************************************
 set showcmd
-set ruler " Show ruler
-"set ch=2 " Make command line two lines high
-
-" filename completition *******************************************************
-" works as bash completition
-set wildmode=longest:full
-set wildmenu
+set ruler
 
 " Line Wrapping ***************************************************************
 set nowrap
-set linebreak  " Wrap at word
+set linebreak
 
 
 " Directories *****************************************************************
 " Setup backup location and enable
 set backupdir=~/.vim/tmp/backup
-"set backup
 
 " Set Swap directory
 set directory=~/.vim/tmp/swap
 
-" Sets path to directory buffer was loaded from
-"autocmd BufEnter * lcd %:p:h
-
-
 " File Stuff ******************************************************************
 filetype plugin indent on
-" To show current filetype use: set filetype
-
-"autocmd FileType html :set filetype=xhtml
-
 
 " Insert New Line *************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
-"set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
-
 
 " Sessions ********************************************************************
 " Sets what is saved when you save a session
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
-
 " Invisible characters *********************************************************
 set listchars=trail:.,tab:>-,eol:$
 set nolist
 :noremap <Leader>i :set list!<CR> " Toggle invisible chars
-
-
-" Mouse ***********************************************************************
-"set mouse=a " Enable the mouse
-"behave xterm
-"set selectmode=mouse
 
 
 " Misc settings ***************************************************************
@@ -165,19 +138,7 @@ set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
 " History *********************************************************************
 set history=1000 " increase history size
 
-" Navigation ******************************************************************
-
-" Make cursor move by visual lines instead of file lines (when wrapping)
-"map <up> gk
-"map k gk
-"imap <up> <C-o>gk
-"map <down> gj
-"map j gj
-"imap <down> <C-o>gj
-"map E ge
-
 map <Leader>p <C-^> " Go to previous file
-
 
 " Ruby stuff ******************************************************************
 "compiler ruby         " Enable compiler support for ruby
@@ -196,8 +157,6 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " May require ruby compiled in
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
 
-
-
 " -----------------------------------------------------------------------------  
 " |                              Plug-ins                                     |
 " -----------------------------------------------------------------------------  
@@ -208,7 +167,6 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 let NERDTreeHijackNetrw=0 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
 
-
 " NERD Commenter **************************************************************
 let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 
@@ -217,65 +175,9 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 " will be commented
 :map <Leader>c :call NERDComment(0, "toggle")<CR> 
 
-
-" SnippetsEmu *****************************************************************
-"imap <unique> <C-j> <Plug>Jumper
-"let g:snip_start_tag = "_\."
-"let g:snip_end_tag = "\._"
-"let g:snip_elem_delim = ":"
-"let g:snip_set_textmate_cp = '1'  " Tab to expand snippets, not automatically.
-
-
-" fuzzyfinder ********************************************************
-map <Leader>FB :FufBuffer<CR>
-let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db'
-map <Leader>FC :FufCoverageFile<CR>
-map <Leader>F :FufCoverageFile<CR>
-map <Leader>FF :FufFile<CR>
-map <Leader>FD :FufDir<CR>
-map <Leader>FL :FufLine<CR>
-map <Leader>FR :FufRenewCache<CR>
-map <Leader>f :FufCoverageFile<CR>
-
-
-" autocomplpop ***************************************************************
-" complete option
-"set complete=.,w,b,u,t,k
-"let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k'
-"set complete=.
-let g:AutoComplPop_IgnoreCaseOption = 0
-let g:AutoComplPop_BehaviorKeywordLength = 2
-
-
 " railsvim *******************************************************************
 map <Leader>ra :AS<CR>
 map <Leader>rs :RS<CR>
-
-" taglist ********************************************************************
-nnoremap <silent> <Leader>t :TlistToggle<CR>
-
-
-" fugitive ********************************************************************
-map <Leader>ggs :Gstatus<CR>
-map <Leader>ggc :Gcommit<CR>
-map <Leader>ggb :Gblame<CR>
-"add the current file to commit
-map <Leader>gga :Gwrite<CR>
-map <Leader>ggd :Gdiff<CR>
-
-func GitGrepWord()
-  normal! "zyiw
-  call GitGrep(getreg('z'))
-endf
-nmap <C-x>G :call GitGrepWord()<CR>
-
-" vimwiki ************************************************************************
-let g:vimwiki_browsers=['open ']
-function! VimwikiWeblinkHandler(weblink)
-  silent execute '!open ' . a:weblink
-endfunction
-let g:vimwiki_folding=1
-let g:vimwiki_fold_lists=1
 
 " nginx conf *********************************************************************
 au BufRead,BufNewFile nginx.conf* set ft=nginx
@@ -294,71 +196,3 @@ au! BufRead,BufNewFile *.json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
 
 " html ***********************************************************************
 let g:no_html_toolbar = 'yes'
-
-
-
-
-" -----------------------------------------------------------------------------  
-" |                             OS Specific                                   |
-" |                      (GUI stuff goes in gvimrc)                           |
-" -----------------------------------------------------------------------------  
-
-" Mac *************************************************************************
-"if has("mac") 
-  "" 
-"endif
- 
-" Windows *********************************************************************
-"if has("gui_win32")
-  "" 
-"endif
-
-
-
-" -----------------------------------------------------------------------------  
-" |                               Startup                                     |
-" -----------------------------------------------------------------------------  
-" Open NERDTree on start
-"autocmd VimEnter * exe 'NERDTree' | wincmd l 
-
-
-" -----------------------------------------------------------------------------  
-" |                               Color Theme                                 |
-" -----------------------------------------------------------------------------  
-"
-"
-" color scheme of the moment:
-syntax on
-
-if has("gui_macvim")
-elseif has("gui_gtk2")
-elseif has("x11")
-elseif has("gui_win32")
-else
-	" Select colormap: 'soft', 'softlight', 'standard' or 'allblue'
-	let xterm16_colormap	= 'allblue'
-	" Select brightness: 'low', 'med', 'high', 'default' or custom levels.
-	let xterm16_brightness	= 'default'
-	colo xterm16
-end
-
-
-
-" -----------------------------------------------------------------------------  
-" |                               Host specific                               |
-" -----------------------------------------------------------------------------  
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
-"if hostname() == "foo"
-  " do something
-"endif
-
-" Example .vimrc.local:
-
-"call Tabstyle_tabs()
-"colorscheme ir_dark
-"match LongLineWarning '\%120v.*'
-
-"autocmd User ~/git/some_folder/* call Tabstyle_spaces() | let g:force_xhtml=1
