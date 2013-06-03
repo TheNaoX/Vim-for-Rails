@@ -63,6 +63,8 @@ endfunction
 
 call Tabstyle_spaces()
 
+" Relative Numbers *******************************************************************
+set relativenumber
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
@@ -196,3 +198,6 @@ au! BufRead,BufNewFile *.json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
 
 " html ***********************************************************************
 let g:no_html_toolbar = 'yes'
+
+" html ***********************************************************************
+colorscheme railscasts
