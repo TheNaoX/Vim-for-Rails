@@ -49,9 +49,6 @@
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = git://github.com/vim-scripts/nginx.vim.git
-[submodule "bundle/Gist"]
-	path = bundle/Gist
-	url = git://github.com/vim-scripts/Gist.vim.git
 [submodule "bundle/TwitVim"]
 	path = bundle/TwitVim
 	url = git://github.com/vim-scripts/TwitVim.git
