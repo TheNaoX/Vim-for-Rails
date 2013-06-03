@@ -91,9 +91,9 @@
 [submodule "bundle/git-grep-vim"]
 	path = bundle/git-grep-vim
 	url = git://github.com/tjennings/git-grep-vim.git
-[submodule "bundle/html.vim"]
-	path = bundle/html.vim
-	url = git://github.com/vim-scripts/HTML.zip.git
+[submodule "bundle/html5.vim"]
+	path = bundle/html5.vim
+	url = git://github.com/othree/html5.vim.git
 [submodule "bundle/closetag"]
 	path = bundle/closetag
 	url = git://github.com/vim-scripts/closetag.vim.git
