@@ -58,7 +58,6 @@
 [submodule "bundle/auto-pairs.vim"]
   path = bundle/auto-pairs.vim
   url = git://github.com/jiangmiao/auto-pairs.git
-
-[submodule "bundle/YouCompleteMe.vim"]
-  path = bundle/YouCompleteMe.vim
-  url = git://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-endwise.vim"]
+  path = bundle/vim-endwise.vim
+  url = git://github.com/jiangmiao/vim-endwise.git
