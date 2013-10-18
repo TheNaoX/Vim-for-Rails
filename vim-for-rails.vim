@@ -199,5 +199,4 @@ au! BufRead,BufNewFile *.json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
 " html ***********************************************************************
 let g:no_html_toolbar = 'yes'
 
-" html ***********************************************************************
-colorscheme railscasts
+colorscheme mustang
