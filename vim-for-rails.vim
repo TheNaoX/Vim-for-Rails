@@ -1,4 +1,4 @@
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 " |                            VIM Settings                                   |
 " |                   (see gvimrc for gui vim settings)                       |
 " |                                                                           |
@@ -27,7 +27,7 @@
 " |   :call Tabstyle_spaces = set tab to 2 spaces                             |
 " |                                                                           |
 " | Put machine/user specific settings in ~/.vimrc.local                      |
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 
 
 set nocompatible
@@ -63,9 +63,6 @@ endfunction
 
 call Tabstyle_spaces()
 
-" Relative Numbers *******************************************************************
-set relativenumber
-
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
@@ -91,7 +88,7 @@ set cursorcolumn
 " Searching *******************************************************************
 set hlsearch  " highlight search
 set incsearch  " Incremental search, search as you type
-set ignorecase " Ignore case when searching 
+set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 
 " Colors **********************************************************************
@@ -133,7 +130,6 @@ set nolist
 
 " Misc settings ***************************************************************
 set backspace=indent,eol,start
-set number " Show line numbers
 set matchpairs+=<:>
 set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
 
@@ -157,11 +153,11 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 " May require ruby compiled in
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 " |                              Plug-ins                                     |
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 
 " NERDTree ********************************************************************
 :noremap <Leader>n :NERDTreeToggle<CR>
@@ -175,7 +171,7 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 " Toggle commenting on 1 line or all selected lines. Wether to comment or not
 " is decided based on the first line; if it's not commented then all lines
 " will be commented
-:map <Leader>c :call NERDComment(0, "toggle")<CR> 
+:map <Leader>c :call NERDComment(0, "toggle")<CR>
 
 " railsvim *******************************************************************
 map <Leader>ra :AS<CR>
@@ -189,7 +185,7 @@ au BufNewFile,BufRead *.txt,README,TODO,CHANGELOG,NOTES,*.asciidoc  setfiletype 
 
 " json conf ******************************************************************
 "
-au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
+au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 " external tool from http://lloyd.github.com/yajl/.
 au! BufRead,BufNewFile *.json set equalprg=json_reformat
 " external tool from http://github.com/dangerousben/jsonval.
@@ -199,4 +195,10 @@ au! BufRead,BufNewFile *.json set errorformat=%E%f:\ %m\ at\ line\ %l,%-G%.%#
 " html ***********************************************************************
 let g:no_html_toolbar = 'yes'
 
+" 256 colors support for console :) ******************************************
+set t_Co=256
+
 colorscheme mustang
+autocmd BufWritePre * :%s/\s\+$//e
+
+set relativenumber
