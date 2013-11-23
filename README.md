@@ -1,7 +1,4 @@
-# DEPRECATION WARNING
-
-This repository will be moved into a new one with all the setup for working with terminal configuration and vim configuration in one place
-
+# WARNING this software is not longer mantained, it has been moved [here](https://github.com/TheNaoX/dotfiles)
 # Vim for Rails
 
 ## The necessary configuration to have the syntax highlight and shortcuts to vim, MacVim or Gvim
